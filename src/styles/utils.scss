@@ -1,0 +1,240 @@
+html {
+    * {
+        &::-webkit-scrollbar {
+            width: 0.6rem;
+            padding: 0 0.25rem;
+            background: transparent;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: transparent;
+            padding: 0 0.25rem;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 4px;
+            background-color: #ccc;
+            width: 0.5rem;
+        }
+    }
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}
+
+// Spacing
+$spacer: 1rem;
+
+$spaceamounts: (
+    0: 0,
+    1: .25,
+    2: .5,
+    3: 1,
+    4: 1.5,
+    5: 3,
+    "auto": "auto"
+);
+$sides: (
+    "": "",
+    "t": "top",
+    "b": "bottom",
+    "l": "left",
+    "r": "right",
+    "x": "x",
+    "y": "y"
+);
+
+@each $prefix, $side in $sides {
+    @each $space, $value in $spaceamounts {
+        $property: if($space =='auto', 'auto', ($spacer * $value));
+
+        @if($prefix =="") {
+            .m-#{$space} {
+                margin: $property !important;
+            }
+
+            .p-#{$space} {
+                padding: $property !important;
+            }
+        }
+
+        @else if ($prefix =='x') {
+            .m#{$prefix}-#{$space} {
+                margin-left: $property !important;
+                margin-right: $property !important;
+            }
+
+            .p#{$prefix}-#{$space} {
+                padding-left: $property !important;
+                padding-right: $property !important;
+            }
+        }
+
+        @else if ($prefix =='y') {
+            .m#{$prefix}-#{$space} {
+                margin-top: $property !important;
+                margin-bottom: $property !important;
+            }
+
+            .p#{$prefix}-#{$space} {
+                padding-top: $property !important;
+                padding-bottom: $property !important;
+            }
+        }
+
+        @else {
+            .m#{$prefix}-#{$space} {
+                margin-#{$side}: $property !important;
+            }
+
+            .p#{$prefix}-#{$space} {
+                padding-#{$side}: $property !important;
+            }
+        }
+    }
+}
+
+// flex
+/* container */
+.d-flex {
+    display: flex;
+}
+
+/* direction */
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-column-reverse {
+    flex-direction: column-reverse;
+}
+
+.flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
+/* wrap */
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-wrap-reverse {
+    flex-wrap: wrap;
+}
+
+/* main axis */
+.justify-content-start {
+    justify-content: flex-start;
+}
+
+.justify-content-end {
+    justify-content: flex-end;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.justify-content-around {
+    justify-content: space-around;
+}
+
+.justify-content-evenly {
+    justify-content: space-evenly;
+}
+
+/* cross axis */
+.align-items-start {
+    align-items: flex-start;
+}
+
+.align-items-end {
+    align-items: flex-end;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.align-items-baseline {
+    align-items: baseline;
+}
+
+.align-items-stretch {
+    align-items: stretch;
+}
+
+/* grow/shrink */
+.flex-grow {
+    flex-grow: 1;
+}
+
+.flex-shrink {
+    flex-shrink: 1;
+}
+
+.flex-balloon {
+    flex: 1 1 0;
+}
+
+// height utils
+.vh-100 {
+    height: 100vh;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.h-50 {
+    height: 50%;
+}
+
+.h-25 {
+    height: 25%;
+}
+
+// width utils
+.vw-100 {
+    width: 100vh;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.w250 {
+    width: 25%;
+}
+
+// scroll
+.scroll-y-auto {
+    overflow-y: auto;
+}
