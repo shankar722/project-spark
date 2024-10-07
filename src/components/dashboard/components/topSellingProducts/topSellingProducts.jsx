@@ -35,7 +35,7 @@ const TopSellingProducts = () => {
     return (
         <Card className='custom-card p-3'>
             <div className="d-flex flex-column mb-4">
-                <p className="cardTitle m-0 p-0">Top Selling Products</p>
+                <p className="cardTitle mt-0 mb-2 mx-0 p-0">Top Selling Products</p>
                 <p className="cardDesc m-0 p-0">list of top selling products</p>
             </div>
             <div className="product-list d-flex flex-column w-100">

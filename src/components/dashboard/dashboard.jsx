@@ -4,6 +4,9 @@ import Grid from '@mui/material/Grid2';
 import {Box} from '@mui/material/';
 import SummaryChart from './components/summaryChart/summaryChart'
 import TopSellingProducts from './components/topSellingProducts/topSellingProducts'
+import ProductExposures from './components/productExposures/productExposures'
+import PackageType from './components/packageType/packageType'
+import GcChart from './components/gcChart/gcChart'
 
 const Dashboard = () => {
   const [count, setCount] = useState(0)
@@ -27,15 +30,20 @@ const Dashboard = () => {
             <SummaryChart />
           </Grid>
 
+          <Grid size={12}>
+            <ProductExposures />
+          </Grid>
 
           <Grid size={3}>
             <TopSellingProducts />
           </Grid>
           <Grid size="grow">
-            <Dashcard data={dashCardData[0]} />
+            <div className="d-flex flex-column" style={{gap: '1.1rem'}}>
+              <GcChart />
+            </div>
           </Grid>
           <Grid size={4}>
-            <Dashcard data={dashCardData[0]} />
+            <PackageType />
           </Grid>
       </Grid>
     </>
