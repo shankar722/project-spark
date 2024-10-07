@@ -130,3 +130,21 @@ button:focus-visible {
 #vertical-bar-chart {
   height: 207px !important;
 }
+
+.page-header {
+  color: #FFF;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 28px */
+}
+
+.page-desc {
+  color: #B5B5C3;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%; /* 16.8px */
+}

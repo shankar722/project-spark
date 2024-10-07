@@ -16,7 +16,7 @@ const GcChart = () => {
                     label: 'Value',
                     data: [163, 174, 179, 184, 187, 183, 179, 185, 189, 194],
                     borderWidth: 1,
-                    backgroundColor: '#009CDD',
+                    backgroundColor: 'rgba(0, 217, 217, 1)',
                     borderRadius: 6,
                     order: 2
                 },
@@ -24,18 +24,24 @@ const GcChart = () => {
                     label: 'GC',
                     base: 10,
                     data: [7.8, 8.9, 9.5, 8.6, 8.8, 9.7, 9.8, 11.3, 12.1, 12.2],
-                    borderWidth: 1,
-                    backgroundColor: '#745CF4',
+                    borderWidth: 4,
+                    backgroundColor: '#ff0000',
+                    borderColor: '#ff0000',
                     type: 'line',
                     borderRadius: 6,
-                    order: 1
+                    order: 1,
+                    yAxisID: 'y2',
                 },
               ]
             },
             options: {
               scales: {
                 y: {
-                  beginAtZero: true
+                  beginAtZero: false,
+                },
+                y2: {
+                  beginAtZero: false,
+                  position: 'left'
                 }
               }
             }

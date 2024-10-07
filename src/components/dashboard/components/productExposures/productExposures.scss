@@ -3,3 +3,10 @@
     line-height: 18px;
     color: rgba(181, 181, 195, 1);
 }
+
+.product-table-header:not(:first-child), 
+.product-item-price {
+    min-width: 2rem;
+    max-width: 4rem;
+    width: 100%;
+}
