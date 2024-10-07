@@ -3,7 +3,7 @@ import {HashRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 import Home from './layouts/home';
 import Login from './components/login/login';
 import './App.scss'
-import Dashboard from './components/dashboard';
+import Dashboard from './components/dashboard/dashboard';
 
 function App() {
   const [count, setCount] = useState(0)

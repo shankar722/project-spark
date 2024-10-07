@@ -43,7 +43,7 @@ $spaceamounts: (
     3: 1,
     4: 1.5,
     5: 3,
-    "auto": "auto"
+    "auto": auto
 );
 $sides: (
     "": "",
@@ -57,7 +57,7 @@ $sides: (
 
 @each $prefix, $side in $sides {
     @each $space, $value in $spaceamounts {
-        $property: if($space =='auto', 'auto', ($spacer * $value));
+        $property: if($space =='auto', auto, ($spacer * $value));
 
         @if($prefix =="") {
             .m-#{$space} {
@@ -237,4 +237,8 @@ $sides: (
 // scroll
 .scroll-y-auto {
     overflow-y: auto;
+}
+
+.cursor-pointer {
+    cursor: pointer;
 }

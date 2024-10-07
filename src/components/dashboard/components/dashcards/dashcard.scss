@@ -1,0 +1,35 @@
+.custom-card {
+    border-radius: 8px !important;
+    background-color: var(--cardBg) !important;
+    box-shadow: 0px 0px 20px 0px rgba(76, 87, 125, 0.02) !important;
+    color: #fff !important;
+    min-height: 73px;
+    // width: 100%;
+
+    .cardTitle {
+        color: #fff;
+        font-family: Inter;
+        font-size: 16.25px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 19.5px; /* 120% */
+    }
+
+    .cardDesc {
+        color: #fff;
+        font-family: Inter;
+        font-size: 12.35px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 14.82px; /* 120% */
+    }
+
+    .perc {
+        text-align: center;
+        font-family: Inter;
+        font-size: 1.2em;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 13px; /* 100% */
+    }
+}
