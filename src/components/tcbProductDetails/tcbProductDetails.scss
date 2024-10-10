@@ -1,0 +1,70 @@
+.page-header-back-btn {
+    height: 40px !important;
+    width: 40px !important;
+    min-width: 40px !important;
+    background-color: var(--cardBg) !important;
+
+    svg {
+        fill: #fff;
+    }
+
+    span {
+        height: 40px !important;
+        width: 40px !important;
+    }
+}
+
+.price-card-price {
+    color: #E1E3EA;
+    font-family: Gilroy-SemiBold;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 140%; /* 44.8px */
+}
+
+.price-card-desc {
+    color: #B5B5C3;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+
+    span {
+        color: var(--Tertiary-Dark-Teal, #009EA3) !important;
+    }
+}
+
+.vertical-hr {
+    width: 1px;
+    height: 66px;
+    border-right: 1px solid var(--hrBorder);
+}
+
+.color-white {
+    color: #E1E3EA !important;
+    font-family:  Gilroy-Medium !important;
+
+    svg {
+        color: #E1E3EA !important;
+    }
+}
+
+.chip-status {
+    min-width: 110px !important;
+    max-width: 110px !important;
+    width: 100% !important;
+}
+
+.total-records-text {
+    color: #FFF;
+    text-align: center;
+    font-family: Gilroy-SemiBold;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 28px */
+    letter-spacing: 0.25px;
+    text-align: left;
+}

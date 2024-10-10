@@ -4,6 +4,8 @@ import Home from './layouts/home';
 import Login from './components/login/login';
 import './App.scss'
 import Dashboard from './components/dashboard/dashboard';
+import TcbProductDetails from './components/tcbProductDetails/tcbProductDetails';
+import Chat from './components/chat/chat';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,6 +18,8 @@ function App() {
           <Route element={<Home />}>
             <Route path='/' element={<Navigate to='/dashboard' />} />
             <Route path='/dashboard' element={<Dashboard />} />
+            <Route path='/tcb-product-details' element={<TcbProductDetails />} />
+            <Route path='/chat' element={<Chat />} />
           </Route>
         </Routes>
       </Router>

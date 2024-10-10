@@ -1,5 +1,6 @@
 @import url(/src/styles/utils.scss);
 @import url(/src/styles/variables.scss);
+@import url(/src/styles/fonts.scss);
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -117,6 +118,7 @@ button:focus-visible {
       width: 20px;
       height: 20px;
       padding: 12px;
+      fill: #fff;
     }
   }
 }
