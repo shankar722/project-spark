@@ -41,9 +41,27 @@ const CustomerChart = () => {
             },
             options: {
                 indexAxis: 'y',
+                plugins: {  // 'legend' now within object 'plugins {}'
+                    legend: {
+                    labels: {
+                        color: "#fff"
+                    }
+                    }
+                },
                 scales: {
                     y: {
-                    beginAtZero: true
+                        beginAtZero: true,
+                        ticks: {
+                            color: "#fff",
+                            beginAtZero: false
+                        }
+                    },
+                    x: {
+                        beginAtZero: false,
+                        ticks: {
+                            color: "#fff",
+                            beginAtZero: false
+                        }
                     }
                 }
             }

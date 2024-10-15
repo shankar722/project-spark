@@ -18,10 +18,12 @@ const GcChart = () => {
                     borderWidth: 1,
                     backgroundColor: 'rgba(0, 217, 217, 1)',
                     borderRadius: 6,
-                    order: 2
+                    order: 2,
+                    color: '#fff'
                 },
                 {
                     label: 'GC',
+                    color: '#fff',
                     base: 10,
                     data: [7.8, 8.9, 9.5, 8.6, 8.8, 9.7, 9.8, 11.3, 12.1, 12.2],
                     borderWidth: 4,
@@ -35,14 +37,35 @@ const GcChart = () => {
               ]
             },
             options: {
+              plugins: {  // 'legend' now within object 'plugins {}'
+                legend: {
+                  labels: {
+                    color: "#fff"
+                  }
+                }
+              },
               scales: {
                 y: {
                   beginAtZero: false,
+                  ticks: {
+                    color: "#fff",
+                    beginAtZero: false
+                  }
                 },
                 y2: {
                   beginAtZero: false,
-                  position: 'left'
-                }
+                  ticks: {
+                    color: "#fff",
+                    beginAtZero: false,
+                    position: 'left',
+                  }
+                },
+                x: {
+                  ticks: {
+                    color: "#fff",
+                    beginAtZero: false
+                  }
+                },
               }
             }
         });

@@ -2,15 +2,8 @@ import React from "react";
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import {Button, Card, Paper, Checkbox, Chip } from '@mui/material/';
 import Grid from '@mui/material/Grid2';
-import { DataGrid } from '@mui/x-data-grid';
 
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import TableSortLabel from '@mui/material/TableSortLabel';
+import { Table, TableBody, TableCell, TableHead, TableRow, TableSortLabel } from '@mui/material/';
 
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';

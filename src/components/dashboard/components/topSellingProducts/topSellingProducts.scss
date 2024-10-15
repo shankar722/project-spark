@@ -7,7 +7,7 @@
     .product-item-title {
         color: #fff;
         font-family: Inter;
-        font-size: 13.975px;
+        font-size: 12px;
         font-style: normal;
         font-weight: 600;
         line-height: 20.962px; /* 150% */
@@ -16,7 +16,7 @@
     .product-item-desc {
         color: #fff;
         font-family: Inter;
-        font-size: 12.35px;
+        font-size: 11px;
         font-style: normal;
         font-weight: 500;
         line-height: 18.525px; /* 150% */
@@ -25,7 +25,7 @@
     .product-item-price {
         color: #fff;
         font-family: Inter;
-        font-size: 16.25px;
+        font-size: 12px;
         font-style: normal;
         font-weight: 600;
         line-height: 24.375px; /* 150% */
@@ -34,14 +34,15 @@
     .product-item-chip {
         text-align: center;
         font-family: Inter;
-        font-size: 13px;
+        font-size: 12px;
         font-style: normal;
         font-weight: 600;
         line-height: 13px; /* 100% */
-        border-radius: 6px;
+        border-radius: 6px; 
+        max-width: 60px !important;
 
         svg {
-            height: 13px;
+            height: 12px;
         }
 
         &.success {
@@ -53,5 +54,14 @@
             color: var(--dangerPink);
             background-color: var(--dangerPinkBg);
         }
+    }
+}
+
+.top-selling-products {
+    .product-table-header:not(:first-child), 
+    .product-item-price {
+        min-width: 1rem;
+        max-width: 2rem;
+        width: 100%;
     }
 }

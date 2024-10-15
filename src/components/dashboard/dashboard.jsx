@@ -23,6 +23,7 @@ const Dashboard = () => {
       <p className='mx-0 mt-0 mb-1 p-0 page-header'>Welcome Username!</p>
       <p className='mx-0 mt-0 mb-3 p-0 page-desc'>Here is your report for August 2024</p>
       <Grid container spacing={2} className='flex-balloon d-flex flex-row'>
+          {/** top row */}
           {dashCardData.map(cardData => 
             <Grid size={2}>
               <Dashcard data={cardData} />
@@ -32,10 +33,28 @@ const Dashboard = () => {
             <SummaryChart />
           </Grid>
 
+          {/** full row table */}
           <Grid size={12}>
             <ProductExposures />
           </Grid>
 
+          {/** new bottom row */}
+          {/* <Grid size={6}>
+            <div className="d-flex flex-column" style={{gap: '1.1rem'}}>
+              <GcChart />
+              <TopSellingProducts />
+            </div>
+          </Grid>
+
+          <Grid size={6}>
+            <div className="d-flex flex-column" style={{gap: '1.1rem'}}>
+              <CustomerChart />
+              <PackageType />
+            </div>
+          </Grid> */}
+
+
+          {/** old bottom row */}
           <Grid size={3}>
             <TopSellingProducts />
           </Grid>
