@@ -30,11 +30,11 @@ const Home = () => {
             "iconRender": <WarehouseOutlinedIcon className='sidebar-icon' />
         },
         {
-            "route": '/',
+            "route": '/graph',
             "iconRender": <StoreOutlinedIcon className='sidebar-icon' />
         },
         {
-            "route": '/',
+            "route": '/tcbTca',
             "iconRender": <AssessmentOutlinedIcon className='sidebar-icon' />
         },
         {

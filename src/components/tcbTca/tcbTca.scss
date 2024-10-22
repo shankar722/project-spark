@@ -1,0 +1,35 @@
+.price-card-desc.perc {
+    font-family: Gilroy-SemiBold !important;
+    font-size: 1rem;
+}
+
+.price-card-price.avg {
+    font-size: 1.2rem !important;
+}
+
+.custom-card-bg {
+    // background-image: url(https://www.barry-callebaut.com/sites/default/files/styles/paragraph_page_intro_responsive/public/2020-11/WALL%20OF%20NUTS%20CASHEW-076.jpg?itok=esv16EWO), linear-gradient(90deg, rgba(0, 213, 255, 0) 40%, rgba(0, 212, 255, 1) 100%);
+    // background: linear-gradient(90deg, rgba(0, 213, 255, 0) 40%, rgba(0, 212, 255, 1) 100%) !important;
+    background-position: center;
+    background-size: 50%;
+    background: 
+    linear-gradient(90deg, rgba(0, 213, 255, 0) 10%, #ccc 100%),
+    url(https://www.barry-callebaut.com/sites/default/files/styles/paragraph_page_intro_responsive/public/2020-11/WALL%20OF%20NUTS%20CASHEW-076.jpg?itok=esv16EWO) /* The background image */
+    !important; /* Gradient with transparent area */
+}
+
+.product-card-icon {
+    height: 2.5rem !important;
+    width: 2.5rem !important;
+}
+
+.product-banner {
+    .page-header {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        font-size: 1.8rem !important;
+    }
+
+    .cardDesc {
+        font-size: 0.85rem !important;
+    }
+}

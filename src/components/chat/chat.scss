@@ -1,3 +1,8 @@
+.chat-container {
+    // max-height: 100%;
+    // overflow-y: auto;
+}
+
 .chat-side-menu {
     background-color: var(--navBg);
 }
@@ -37,4 +42,27 @@
 .send-icon {
     color: #E1E3EA;
     cursor: pointer;
+}
+
+.chat-question {
+    max-width: 75%;
+    width: auto;
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: var(--navBg);
+    border-radius: 5rem;
+    margin-left: auto;
+}
+
+.chat-answer {
+    max-width: 75%;
+    width: auto;
+    padding: 0.75rem 1rem;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-right: auto;
 }

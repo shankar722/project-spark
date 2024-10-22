@@ -6,6 +6,8 @@ import './App.scss'
 import Dashboard from './components/dashboard/dashboard';
 import TcbProductDetails from './components/tcbProductDetails/tcbProductDetails';
 import Chat from './components/chat/chat';
+import Graph from './components/graph/graph';
+import TcbTca from './components/tcbTca/tcbTca';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,6 +22,8 @@ function App() {
             <Route path='/dashboard' element={<Dashboard />} />
             <Route path='/tcb-product-details' element={<TcbProductDetails />} />
             <Route path='/chat' element={<Chat />} />
+            <Route path='/tcbTca' element={<TcbTca />} />
+            <Route path='/graph' element={<Graph />} />
           </Route>
         </Routes>
       </Router>
