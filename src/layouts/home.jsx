@@ -62,7 +62,7 @@ const Home = () => {
                             {menu?.iconRender}
                         </div>)}
                 </div>
-                <div className='d-flex flex-column scroll-y-auto flex-balloon main-layout p-4'>
+                <div className='d-flex flex-column scroll-y-auto flex-balloon main-layout p-4' id='layout'>
                     <Outlet />
                 </div>
             </div>
