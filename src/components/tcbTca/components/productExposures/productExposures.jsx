@@ -16,7 +16,7 @@ const ProductExposures = () => {
     
     const productList = [
         {
-            name: 'Cocoa Beans',
+            name: 'Cashew',
             quantity: {
                 value: 46983,
                 perc: 60
@@ -57,7 +57,7 @@ const ProductExposures = () => {
                         {product[item].value}% <ArrowUpwardOutlinedIcon style={{transform: product[item].type === 'success' ? 'rotate(0deg)' : 'rotate(180deg)'}} fontSize='small' className='' />
                     </p>}
                     {(index === 3 || index === 4)
-                    && <p key={index} className="p-0 ml-auto mr-0 my-0 d-flex align-items-center product-item-price">{product[item].value} <span className='ml-3'>{product[item].perc}%</span></p>}
+                    && <p key={index} className="p-0 ml-auto mr-0 my-0 d-flex align-items-center product-item-price justify-content-end">{product[item].value}</p>}
                 </>
             )}
             {/* <p className="p-0 ml-auto mr-0 my-0 product-item-price text-right">1,256</p> */}

@@ -41,42 +41,42 @@ const TcbTca = () => {
 
     const metrics = [
         {
-            avg: '1,280',
-            desc: 'Total number of Material',
+            avg: '49',
+            desc: 'Total number of SKUs',
             perc: '',
             value: 0
         },
         {
-            avg: '9,21,389',
+            avg: '3870 MT',
             desc: 'Quantity',
-            perc: '-4.32',
+            perc: '-5',
             value: 30,
             color: '#6DBA00',
             percType: 'danger'
         },
         {
-            avg: '2.64',
-            desc: 'Ratio',
-            perc: '35.92',
+            avg: '7.5 / KG',
+            desc: 'Price per KG',
+            perc: '6',
             value: 30,
             color: '#009CDD',
             percType: 'success'
         },
         {
-            avg: '-2,27,244',
-            desc: 'Price',
-            perc: '24,333.22',
+            avg: '5.5',
+            desc: 'RM',
+            perc: '2',
             value: 30,
             color: '#FF40B3',
-            percType: 'danger'
+            percType: 'success'
         },
         {
-            avg: '-2,97,061',
+            avg: '3.5',
             desc: 'Margin',
-            perc: '-70.23',
+            perc: '5',
             value: 30,
             color: '#8E75F8',
-            percType: 'success'
+            percType: 'danger'
         }
     ]
 
