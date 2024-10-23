@@ -64,7 +64,12 @@ const Chat = () => {
     currency: 'Curr.',
     amountInDocCurreny: 'Amount in doc. curr.',
     localCurrency: 'LCurr',
-    amountInLocalCurreny: 'Amount in local cur.'
+    amountInLocalCurreny: 'Amount in local cur.',
+      salesInvoiceNo: 'Sales Invoice No',
+      group: 'Group',
+      customerName: 'CUSTOMER NAME',
+      materialGroup: 'Material Group',
+      salesValueInUsd: 'Sales Value in USD'
   }
 
   const generateResponse = (question) => {
@@ -246,10 +251,11 @@ const Chat = () => {
           valueOverdue: '1.1 M',
           avgCreditsdays: '25 Days',
           avgCollectedDays: '31 Days',
-          wcImpact: '1.2 M'
+          wcImpact: '120,000 USD'
         }])
         break;
 
+      case 'Which customers impacts credit breach ?':
       case 'Which customers impacts credit breach':
         response = `Costco over due 700K USD & avg payment days 67 days instead of 60 days  - 7 days impacts the working capital 
         Rewer over due by 300K USD & Avg payments days are 37 instead of 30 days -7 days impacts the working capital`;
@@ -450,6 +456,47 @@ const Chat = () => {
       ])
         remarks = '$15,000 loss'
         break;
+      
+      case 'which are all the invoices impacting this breach ?':
+        response = '';
+        responseTime = 2000;
+        tableData = new Array([{
+          salesInvoiceNo: '9004301230',
+          group: 'Costco',
+          customerName: 'COSTCO WHOLESALE INDUSTRIES',
+          materialGroup: 'Pinenuts',
+          salesValueInUsd: '358,452.00'
+        },
+        {
+          salesInvoiceNo: '9004301231',
+          group: 'Costco',
+          customerName: 'COSTCO WHOLESALE INDUSTRIES',
+          materialGroup: 'Pinenuts',
+          salesValueInUsd: '358,452.00'
+        },
+        {
+          salesInvoiceNo: '9004301290',
+          group: 'Costco',
+          customerName: 'COSTCO WHOLESALE INDUSTRIES',
+          materialGroup: 'Macadamia',
+          salesValueInUsd: '343,818.00'
+        },
+        {
+          salesInvoiceNo: '9004301338',
+          group: 'Costco',
+          customerName: 'COSTCO WHOLESALE INDUSTRIES',
+          materialGroup: 'Macadamia',
+          salesValueInUsd: '343,818.00'
+        },
+        {
+          salesInvoiceNo: '9004301406',
+          group: 'Costco',
+          customerName: 'COSTCO WHOLESALE INDUSTRIES',
+          materialGroup: 'Macadamia',
+          salesValueInUsd: '343,818.00'
+        }
+      ])
+        break;
 
       default:
         response = 'It seems like your message got scrambled. Could you try sending it again?';
@@ -474,11 +521,11 @@ const Chat = () => {
   const handleSend = () => {
     if (question === '') return;
     const newChatThread = new Array(...chatThread);
-    newChatThread.push({type: 'question', text: question, attachment: file});
+    newChatThread.push({type: 'question', text: question.trim(), attachment: file});
     setChatThread(newChatThread);
     scrollLayoutNode.scrollTo(0, scrollLayoutNode.scrollHeight + 100);
     setSelectedAttachment(false)
-    generateResponse(question)
+    generateResponse(question.trim())
     setQuestion('');
   }
 
@@ -568,7 +615,7 @@ const Chat = () => {
                   }}>
                     <TextField 
                       value={question}
-                      onChange={(e) => setQuestion(e.target.value.trim())}
+                      onChange={(e) => setQuestion(e.target.value)}
                       onKeyUp={(e) => handleEnter(e)}
                       className="chat-textbox" 
                       maxRows={4} 
