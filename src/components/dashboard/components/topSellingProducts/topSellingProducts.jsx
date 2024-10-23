@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import {Card} from '@mui/material/';
 import Grid from '@mui/material/Grid2';
 import ProductImg from '../../../../assets/product-img.svg'
@@ -6,7 +7,7 @@ import './topSellingProducts.scss';
 import ArrowUpwardOutlinedIcon from '@mui/icons-material/ArrowUpwardOutlined';
 
 const TopSellingProducts = () => {
-
+    const navigate = useNavigate();
     const productList = [
         {name: 'Pine Nuts', price: '31.65', gc: '(0.10)', perc: '-0.3', type: 'danger'},
         {name: 'Almonds', price: '29.90', gc: '1.38', perc: '4.6', type: 'success'},
@@ -21,7 +22,7 @@ const TopSellingProducts = () => {
     ]
 
     const productItem = (name, desc, price, gc, perc, type, index) => 
-    <Grid container className="product-item d-flex flex-row align-items-center py-1">
+    <Grid container className="product-item d-flex flex-row align-items-center py-1" sx={{cursor: 'pointer'}} onClick={() => navigate('/tcbTca')}>
         <Grid size={4} className="d-flex align-items-center">
             <img src={ProductImg} className='mr-3' alt='product img'  />
             <p className="p-0 m-0 product-item-title">{name}</p>
