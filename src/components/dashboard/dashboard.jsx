@@ -20,7 +20,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <p className='mx-0 mt-0 mb-1 p-0 page-header'>Welcome Username!</p>
+      <p className='mx-0 mt-0 mb-1 p-0 page-header'>Welcome User!</p>
       <p className='mx-0 mt-0 mb-3 p-0 page-desc'>Here is your report for August 2024</p>
       <Grid container spacing={2} className='flex-balloon d-flex flex-row dashboard-container'>
           {/** top row */}

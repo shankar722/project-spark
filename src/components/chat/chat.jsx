@@ -191,7 +191,7 @@ const Chat = () => {
         responseTime = 2000;
         tableData = null;
         break;
-      case 'What is impacting  DC cost ?':
+      case 'What is impacting DC cost ?':
         response = '0.7% impact driven by Freight 0,4 % in Freight, & 0.3% in Power';
         responseTime = 2000;
         tableData = new Array([

@@ -85,7 +85,7 @@ const TcbTca = () => {
         <div className="d-flex align-items-center mb-3">
             <Button variant="contained" className="page-header-back-btn d-flex align-items-center p-0 mr-3" onClick={() => navigate('/dashboard')}><KeyboardBackspaceIcon /></Button>
             <div className="d-flex flex-column">
-                <p className='mx-0 mt-0 mb-0 p-0 page-header'>TCB vs TCA</p>
+                <p className='mx-0 mt-0 mb-0 p-0 page-header'>Detailed M2M</p>
                 <p className='mx-0 mt-0 mb-0 p-0 page-desc'>Home</p>
             </div>
         </div>
