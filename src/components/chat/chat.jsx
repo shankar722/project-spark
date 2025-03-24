@@ -65,11 +65,17 @@ const Chat = () => {
     amountInDocCurreny: 'Amount in doc. curr.',
     localCurrency: 'LCurr',
     amountInLocalCurreny: 'Amount in local cur.',
-      salesInvoiceNo: 'Sales Invoice No',
-      group: 'Group',
-      customerName: 'CUSTOMER NAME',
-      materialGroup: 'Material Group',
-      salesValueInUsd: 'Sales Value in USD'
+    salesInvoiceNo: 'Sales Invoice No',
+    group: 'Group',
+    customerName: 'CUSTOMER NAME',
+    materialGroup: 'Material Group',
+    salesValueInUsd: 'Sales Value in USD',
+    newCustomerAddition: 'New Customer Addition',
+    salesQtyMt: 'Sales Qty MT',
+    salesValueInMilUsd: 'Sales Value in Mil USD',
+    variance: 'Variance',
+    valueInUsd: 'Value in USD',
+    remarks: 'Remarks'
   }
 
   const generateResponse = (question) => {
@@ -495,6 +501,95 @@ const Chat = () => {
           materialGroup: 'Macadamia',
           salesValueInUsd: '343,818.00'
         }
+      ])
+        break;
+
+      case 'What is key summary':
+      case 'give me the key summary':
+        response = 'Overall Nuts PL witnessed 149% Volume growth and 85% Value growth mainly driven by Costco US /  Cost EU / Aldi EU, Marsch acquisition (16,760 MT and 106 Mil USD) & new customer addition​';
+        responseTime = 2000;
+        tableData = null
+        break;
+
+      case 'What is driving costco':
+      case 'share the summary for costco':
+        response = '33% Volume growth & 38% Value growth driven by Costco US & New addition​. \n New addition : 1005 MT / 12.7 Mil USD​​';
+        responseTime = 2000;
+        tableData = null
+        break;
+      
+      case 'What is driving aldi':
+      case 'share the summary for aldi':
+        response = '263% Volume growth & 161% Value growth mainly driven New addition & ​New addition : 954MT / 2.4 Mil USD. Marsch Acquisition 6175 MT / 39 Mil​';
+        responseTime = 2000;
+        tableData = null
+        break;
+
+      case 'What is driving others':
+        response = '208%Volume growth & 125% Value growth mainly driven by Marsch acquisition and  New addition ( Amazon / Metro / Home Plus) and Marsch Acquisition : 1218MT / 7.7 Mil USD​';
+        responseTime = 2000;
+        tableData = null
+        break;
+
+      case 'share me the new addition for aldi':
+        response = 'New addition : 368MT / 3.5 Mil USD​​';
+        responseTime = 2000;
+        tableData = new Array([{
+          newCustomerAddition: 'Hofer Austria',
+          salesQtyMt: '874',
+          salesValueInMilUsd: '1.2'
+        },
+        {
+          newCustomerAddition: 'Aldi Germany',
+          salesQtyMt: '55',
+          salesValueInMilUsd: '1.1'
+        },
+        {
+          newCustomerAddition: 'Aldi Hungary',
+          salesQtyMt: '25',
+          salesValueInMilUsd: '0.2'
+        },
+        {
+          newCustomerAddition: 'Marsch Acquisition',
+          salesQtyMt: '6175',
+          salesValueInMilUsd: '39.3'
+        },
+        {
+          newCustomerAddition: 'Grand Total',
+          salesQtyMt: '7130',
+          salesValueInMilUsd: '41.7'
+        },
+      ])
+        break;
+
+      case 'what is the variance between Budget vs actuals as on YTD?':
+        response = '';
+        responseTime = 2000;
+        tableData = new Array([{
+          variance: 'Volume',
+          valueInUsd: '13 M',
+          remarks: 'Mainly driven by  Costco / Aldi'
+        },
+        {
+          variance: 'Price',
+          valueInUsd: '5 M',
+          remarks: 'Driven by Cashew   4 and   3 Almonds  offset a by  pine nuts drop -2 mils'
+        },
+        {
+          variance: 'Mix',
+          valueInUsd: '2 M',
+          remarks: 'higher pine nuts where average sales price is 19 USD per kg'
+        },
+        {
+          variance: 'New customers',
+          valueInUsd: '2 M',
+          remarks: 'driven by Aldi'
+        },
+        {
+          variance: 'Grand total',
+          valueInUsd: '22 M',
+          remarks: ''
+        },
       ])
         break;
 
