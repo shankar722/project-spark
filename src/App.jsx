@@ -8,7 +8,7 @@ import TcbProductDetails from './components/tcbProductDetails/tcbProductDetails'
 import Chat from './components/chat/chat';
 import Graph from './components/graph/graph';
 import TcbTca from './components/tcbTca/tcbTca';
-
+import AttackSurface from './components/attackSurface/attackSurface';
 function App() {
   const [count, setCount] = useState(0)
 
@@ -18,10 +18,11 @@ function App() {
         <Routes>
           <Route path='/login' element={<Login />} />
           <Route element={<Home />}>
-            <Route path='/' element={<Navigate to='/dashboard' />} />
+            <Route path='/' element={<Navigate to='/attack-surface' />} />
             <Route path='/dashboard' element={<Dashboard />} />
             <Route path='/tcb-product-details' element={<TcbProductDetails />} />
             <Route path='/chat' element={<Chat />} />
+            <Route path='/attack-surface' element={<AttackSurface />} />
             <Route path='/tcbTca' element={<TcbTca />} />
             <Route path='/graph' element={<Graph />} />
           </Route>

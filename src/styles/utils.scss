@@ -108,101 +108,105 @@ $sides: (
 // flex
 /* container */
 .d-flex {
-    display: flex;
+    display: flex !important;
 }
 
 /* direction */
 .flex-column {
-    flex-direction: column;
+    flex-direction: column !important;
 }
 
 .flex-row {
-    flex-direction: row;
+    flex-direction: row !important;
 }
 
 .flex-column-reverse {
-    flex-direction: column-reverse;
+    flex-direction: column-reverse !important;
 }
 
 .flex-row-reverse {
-    flex-direction: row-reverse;
+    flex-direction: row-reverse !important;
 }
 
 /* wrap */
 .flex-nowrap {
-    flex-wrap: nowrap;
+    flex-wrap: nowrap !important;
 }
 
 .flex-wrap {
-    flex-wrap: wrap;
+    flex-wrap: wrap !important;
 }
 
 .flex-wrap-reverse {
-    flex-wrap: wrap;
+    flex-wrap: wrap !important;
 }
 
 /* main axis */
 .justify-content-start {
-    justify-content: flex-start;
+    justify-content: flex-start !important;
 }
 
 .justify-content-end {
-    justify-content: flex-end;
+    justify-content: flex-end !important;
 }
 
 .justify-content-center {
-    justify-content: center;
+    justify-content: center !important;
 }
 
 .justify-content-between {
-    justify-content: space-between;
+    justify-content: space-between !important;
 }
 
 .justify-content-around {
-    justify-content: space-around;
+    justify-content: space-around !important;
 }
 
 .justify-content-evenly {
-    justify-content: space-evenly;
+    justify-content: space-evenly !important;
 }
 
 /* cross axis */
 .align-items-start {
-    align-items: flex-start;
+    align-items: flex-start !important;
 }
 
 .align-items-end {
-    align-items: flex-end;
+    align-items: flex-end !important;
 }
 
 .align-items-center {
-    align-items: center;
+    align-items: center !important;
 }
 
 .align-items-baseline {
-    align-items: baseline;
+    align-items: baseline !important;
 }
 
 .align-items-stretch {
-    align-items: stretch;
+    align-items: stretch !important;
 }
 
 /* grow/shrink */
 .flex-grow {
-    flex-grow: 1;
+    flex-grow: 1 !important;
 }
 
 .flex-shrink {
-    flex-shrink: 1;
+    flex-shrink: 1 !important;
 }
 
 .flex-balloon {
-    flex: 1 1 0;
+    flex: 1 1 0 !important;
 }
 
 // height utils
 .vh-100 {
     height: 100vh;
+}
+
+.h-inherit {
+    height: inherit;
 }
 
 .h-100 {
@@ -220,6 +224,10 @@ $sides: (
 // width utils
 .vw-100 {
     width: 100vh;
+}
+
+.w-inherit {
+    width: inherit;
 }
 
 .w-100 {
@@ -249,4 +257,12 @@ $sides: (
 
 .text-left {
     text-align: left;
+}
+
+.gap-3 {
+    gap: 1rem;
+}
+
+.gap-2 {
+    gap: 0.5rem;
 }

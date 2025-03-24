@@ -1,97 +1,147 @@
-.login-page {
-    display: flex;
-    height: 100vh;
-    background-color: #1C2236; /* Adjust according to the figma design */
-  }
-  
-  .login-left {
-    flex: 2;
-    position: relative;
-  }
-  
-  .background-image {
-    width: 100%;
-    height: 100%;
+.login-left {
+  .login-image {
+    width: auto;
+    height: 90%;
     object-fit: cover;
+    border-radius: 4px;
   }
-  
-  .login-right {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 2rem;
-    color: white;
-    max-width: 364px;
-    margin-right: 5rem;
+
+  .login-image-pillar {
+      width: 24px;
+      height: 80%;
+      background-color: var(--secondary);
+
+      &.left {
+          border-top-left-radius: var(--login-image-pillar-border-radius);
+          border-bottom-left-radius: var(--login-image-pillar-border-radius);
+      }
+
+      &.right {
+          border-top-right-radius: var(--login-image-pillar-border-radius);
+          border-bottom-right-radius: var(--login-image-pillar-border-radius);
+      } 
   }
-  
-  .login-logo {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  
-  .logo {
-    width: 100px;
-  }
-  
-  .subtitle {
-    font-size: 1rem;
-    font-weight: normal;
-  }
-  
-  .login-form {
-    margin-bottom: 1.5rem;
-  }
-  
-  .input-group {
-    margin-bottom: 1rem;
-  }
-  
-  .input-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-  
-  .input-group input {
-    width: 100%;
-    padding: 0.5rem;
-    border-radius: 0.25rem;
-    border: none;
-  }
-  
-  .login-button {
-    width: 100%;
-    padding: 0.75rem;
-    background-color: #FF4B4B; /* Adjust color based on Figma */
-    border: none;
-    border-radius: 0.25rem;
-    color: white;
-    font-size: 1rem;
-  }
-  
-  .forgot-password {
-    text-align: right;
-    margin-top: 0.5rem;
-  }
-  
-  .terms {
-    text-align: center;
-    margin-top: 1.5rem;
-  }
-  
-  .terms a {
-    color: #999999;
-    text-decoration: none;
-    margin: 0 0.5rem;
-  }
-  
-  .powered-by {
-    text-align: center;
-    margin-top: 1rem;
-  }
-  
+}
+
+.login-right {
+  position: relative;
+
   .mindsprint-logo {
-    width: 80px;
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    overflow: hidden;
+    height: 3.5rem;
+    flex-shrink: 0;
   }
-  
+
+  .logo-text {
+    color: rgba(0, 0, 0, 0.60);
+    margin-top: -0.5rem;
+    text-align: right;
+    font-family: Gilroy-SemiBold;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.32px;
+    text-transform: uppercase;
+  }
+}
+
+.login-button {
+  background-color: var(--primary) !important;
+  color: white !important;
+  border-radius: 48px !important;
+  font-family: Gilroy-SemiBold !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  letter-spacing: 0.5px !important;
+  text-transform: capitalize !important;
+  padding: 10px 20px !important;
+  width: 75% !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* "OR" Divider styles starts */
+.matDivider {
+  position: absolute;
+  top: 16px;
+  left: 0px;
+  background-color: #e0e0e0;
+  width: 100%;
+  height: 1px;
+  overflow: hidden;
+}
+.or {
+  position: relative;
+  letter-spacing: 2px;
+  line-height: 32px;
+  text-transform: uppercase;
+}
+.verticalContainer {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  border-radius: 24px;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  box-sizing: border-box;
+  width: 57.2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1px 8px;
+}
+.textInput {
+  width: 75%;
+  position: relative;
+  height: 34px;
+  text-align: center;
+  font-size: 12px;
+  color: #000;
+  font-family: Gilroy-Medium;
+}
+/* "OR" Divider styles ends */
+
+.forgot-password {
+  position: relative;
+  font-size: 14px;
+  font-family: Gilroy-SemiBold;
+  color: #ed1515;
+  text-align: right;
+}
+
+.login-sso-button {
+    background-color: #fff !important;
+    color: #000 !important;
+    border-radius: 48px !important;
+    font-family: Gilroy-SemiBold !important;
+    font-size: 14px !important;
+    line-height: 24px !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+    padding: 10px 20px !important;
+    width: 75% !important;
+    outline: none !important;
+    box-shadow: none !important;
+    border: 1px solid #E0E0E0 !important;
+}
+
+.terms-and-conditions {
+  color: #000;
+  text-align: center;
+  font-family: Gilroy-Regular;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.56px;
+  position: absolute;
+  bottom: 2.5rem;
+}
+

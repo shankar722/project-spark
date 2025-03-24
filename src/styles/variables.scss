@@ -1,12 +1,26 @@
 :root {
-    --navBg: #181C32;
-    --bodyBg: #0C0F20;
-    --cardBg: #222847;
+    --newNavBg: #212121;
+    --navBg: #fff;
+    --bodyBg: #F5F5F5;
+    --cardBg: #fff;
+    --sidebarBg: #fff;
+    --table-row-background: #fff;
+    --sidebarActiveBg: #EEE;
     --mindsprintRed: #DA0806;
+    --low: #207327;
+    --medium: #F8C419;
+    --high: #F27D16;
     --green: #00985b;
+    --created: rgba(3, 74, 166, 0.16);
+    --created-text: #034AA6;
+    --table-action-icon: #001349;
     --successBlue: #00D9D9;
     --successBlueBg: #DCFDFD;
     --dangerPink: #F1416C;
     --dangerPinkBg: #FFF5F8;
     --hrBorder: #3F4254;
+
+    --primary: #44101D;
+    --secondary: #711A31;
+    --login-image-pillar-border-radius: 32px;
 }

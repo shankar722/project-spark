@@ -2,12 +2,12 @@
     border-radius: 8px !important;
     background-color: var(--cardBg) !important;
     box-shadow: 0px 0px 20px 0px rgba(76, 87, 125, 0.02) !important;
-    color: #fff !important;
+    color: #000 !important;
     min-height: 73px;
     // width: 100%;
 
     .cardTitle {
-        color: #fff;
+        color: #000;
         font-family: Inter;
         font-size: 16.25px;
         font-style: normal;
@@ -16,7 +16,7 @@
     }
 
     .cardDesc {
-        color: #fff;
+        color: #000;
         font-family: Inter;
         font-size: 12.35px;
         font-style: normal;

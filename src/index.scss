@@ -1,6 +1,7 @@
 @import url(/src/styles/utils.scss);
 @import url(/src/styles/variables.scss);
 @import url(/src/styles/fonts.scss);
+@import url(/src/styles/customGrid.scss);
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -9,7 +10,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #fff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -33,7 +34,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  color: #fff;
+  color: #000;
 }
 
 h1 {
@@ -59,7 +60,7 @@ button:hover {
 
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  // outline: 4px auto -webkit-focus-ring-color;
 }
 
 @media (prefers-color-scheme: light) {
@@ -77,9 +78,17 @@ button:focus-visible {
   }
 }
 
-.navbar,
+.navbar {
+  background-color: var(--newNavBg);
+  color: #EEE;
+  font-family: Gilroy-SemiBold;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 33.6px */
+}
 .sidebar {
-  background-color: var(--navBg);
+  background-color: var(--sidebarBg);
 }
 
 .sidebar {
@@ -102,31 +111,44 @@ button:focus-visible {
     &.active {
       width: 32px;
       height: 32px;
-      background-color: var(--mindsprintRed);
-      border: 0.35rem solid #fff;
-      border-radius: 25px;
+      background-color: var(--sidebarActiveBg);
+      // border: 0.35rem solid #fff;
+      border-radius: 4px;
+      padding: 0.75rem;
     }
 
-    &:nth-child(2) {
-      .sidebar-icon {
-        width: 1rem;
-        height: 1rem;
-        padding: 0.5rem;
+    &:nth-child(3) {
+      &.active {
+        .sidebar-icon {
+          path {
+            stroke: var(--mindsprintRed);
+          }
+        }
+      }
+    }
+
+    &:not(:nth-child(3)) {
+      &.active {
+        .sidebar-icon {
+          path {
+            fill: var(--mindsprintRed);
+          }
+        }
       }
     }
 
     .sidebar-icon {
-      width: 20px;
-      height: 20px;
-      padding: 12px;
-      fill: #fff;
+      height: 1.5rem;
+      width: 1.5rem;
+      // padding: 12px;
+      // fill: #fff;
     }
   }
 }
 
 .main-layout {
   background-color: var(--bodyBg);
-  max-height: calc(100vh - 7rem);
+  // max-height: calc(100vh - 7rem);
   // min-height: calc(100vh - 64.8px);
 }
 
@@ -135,7 +157,7 @@ button:focus-visible {
 }
 
 .page-header {
-  color: #FFF;
+  color: #000;
   font-family: Inter;
   font-size: 20px;
   font-style: normal;
@@ -150,4 +172,88 @@ button:focus-visible {
   font-style: normal;
   font-weight: 400;
   line-height: 120%; /* 16.8px */
+}
+
+.ge-card {
+  display: flex;
+  // width: 266px;
+  // min-width: 180px;
+  flex: 1 1 0;
+  padding: 16px 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  border-radius: 4px;
+  border: 1px solid var(--grey-lighten-2, #E0E0E0);
+  background: var(--shades-white, #FFF);
+  position: relative;
+
+  .card-title {
+    color: var(--grey-darken-3, #424242);
+    font-family: Gilroy-Medium;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 14px */
+  }
+
+  .card-value {
+    color: var(--grey-darken-3, #424242);
+    font-family: Gilroy-SemiBold;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 24px */
+    letter-spacing: 0.8px;
+  }
+
+  .card-status {
+    color: var(--grey-darken-3, #424242);
+    font-family: Gilroy-Medium;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 12px */
+    letter-spacing: 0.48px;
+
+    .indicator {
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      
+      &.critical {
+        background-color: var(--mindsprintRed);
+      }
+      &.low {
+        background-color: var(--low);
+      }
+      &.medium {
+        background-color: var(--medium);
+      }
+      &.high {
+        background-color: var(--high);
+      }
+      
+
+    }
+  }
+
+  .arrow-icon {
+    position: absolute;
+    right: 20px;
+    bottom: 16px;
+  }
+}
+
+.MuiTabs-flexContainer {
+  max-height: 62px;
+  align-items: center;
+}
+
+.icon-button {
+  max-width: 32px !important;
+  min-width: 32px !important;
+  padding: 8px !important;
+  width: 32px !important;
+  height: 32px !important;
 }
