@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import './attackSurface.scss';
 import { Tabs, Tab, Box, Button, ButtonGroup  } from '@mui/material/';
 import ArrowForwardOutlinedIcon from '@mui/icons-material/ArrowForwardOutlined';
@@ -9,15 +9,18 @@ import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
 import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
 import EditIcon from '@mui/icons-material/Edit';
 import TableRow from 'src/commonComponents/tableRow/tableRow.jsx';
+import {GuardianEyeContext} from 'redux/context';
+import {getAllDomains, getSummary} from 'services/domains.service.jsx';
 
 const AttackSurface = () => {
-
+    const { guardianEyeData, setDomains, setSummary } = useContext(GuardianEyeContext)
+    const { domains, summary } = guardianEyeData;
     const cardsList = [
-        {name: 'Total No. of Domains', value: 1089, status: 'Critical'},
-        {name: 'Total No. of Sub Domains', value: 0, status: 'Low'},
-        {name: 'Domains Expiring soon', value: 10, status: 'Medium'},
-        {name: 'Certificates Expiring soon', value: 25, status: 'High'},
-        {name: 'Deleted Domains', value: 90, status: 'High'},
+        {name: 'Total No. of Domains', value: 1089, status: 'Critical', keyName: 'totalDomains'},
+        {name: 'Total No. of Sub Domains', value: 0, status: 'Low', keyName: 'totalSubdomains'},
+        {name: 'Domains Expiring soon', value: 10, status: 'Medium', keyName: 'domainsExpiringSoon'},
+        {name: 'Certificates Expiring soon', value: 25, status: 'High', keyName: 'certificatesExpiringSoon'},
+        {name: 'Deleted Domains', value: 90, status: 'High', keyName: 'deletedDomains'},
     ];
     const icon = <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
     <path d="M3 11H11V3H3M5 5H9V9H5M13 21H21V13H13M15 15H19V19H15M3 21H11V13H3M5 15H9V19H5M13 3V11H21V3M19 9H15V5H19V9Z" fill="#424242"/>
@@ -25,6 +28,20 @@ const AttackSurface = () => {
 
   const tabMenu = ['Domains', 'Sub Domains', 'Active IPs', 'Netblocks', 'Open Ports', 'Applications', 'Leaked Credentials', 'APIs', 'DNS Records']
   const listingTabMenu = ['All (1200)', 'Updated (320)', 'Expiring Soon (48)', 'Expired (12)', 'Announcements']
+
+  useEffect(() => {
+    getAllDomains().then(res => {
+        setDomains(res);
+    });
+
+    getSummary().then(res => {
+        setSummary(res);
+    });
+  }, [])
+
+  useEffect(() => {
+    console.log('domains', domains)
+  }, [domains])
 
   return (
     <div className="attack-surface-container w-inherit h-inherit d-flex flex-column flex-balloon">
@@ -52,7 +69,7 @@ const AttackSurface = () => {
                     <p className="my-0 card-title">{cardData.name}</p>
 
                     <div className="d-flex flex-column">
-                        <p className="card-value mb-2 mt-0">{cardData.value}</p>
+                        <p className="card-value mb-2 mt-0">{summary[cardData.keyName]}</p>
                         <p className="card-status d-flex align-items-center my-0">
                             <span className={`indicator mr-2
                                 ${cardData.status === 'Critical' ? 'critical' : cardData.status === 'Low' ? 'low' : cardData.status === 'Medium' ? 'medium' : 'high'}
@@ -80,7 +97,11 @@ const AttackSurface = () => {
 
             {/* table body */} {/* to be put as seperate component */}
             <div className="table-body">
-                {Array.from({ length: 5 }).map((_, index) => <TableRow />)}
+                {domains.length > 0 
+                ? domains.map((rowData, index) => <TableRow rowData={rowData} />) 
+                : <div className="d-flex flex-column align-items-center justify-content-center h-inherit">
+                    <p className="mx-auto my-auto py-0 px-0">No records available</p>
+                </div>}
             </div>
         </div>
     </div>
