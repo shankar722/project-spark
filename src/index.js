@@ -1,11 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import GuardianEyeProvider from './redux/context.jsx';
-import App from './App.jsx';
+import ReactDOM from 'react-dom/client'
+import App from './App';
 
-ReactDOM.render(
-  <GuardianEyeProvider>
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
     <App />
-  </GuardianEyeProvider>,
-  document.getElementById('root')
 );

@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { ApiHelper } from '../redux/serviceHelper'
 import {GuardianEyeContext} from 'redux/context';
 
-const baseUrl = `http://172.31.0.247:8000`
+const baseUrl = `http://172.31.0.176:8000`
 
 const getAPIEndPoint = (url) => {
     return `${baseUrl}${url}`
